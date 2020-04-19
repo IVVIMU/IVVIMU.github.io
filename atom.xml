@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ivvimu.github.io/"/>
-  <updated>2020-04-19T11:36:29.315Z</updated>
+  <updated>2020-04-19T11:38:18.107Z</updated>
   <id>https://ivvimu.github.io/</id>
   
   <author>
@@ -21,17 +21,16 @@
     <link href="https://ivvimu.github.io/2020/04/19/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
     <id>https://ivvimu.github.io/2020/04/19/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
     <published>2020-04-19T11:10:04.000Z</published>
-    <updated>2020-04-19T11:36:29.315Z</updated>
+    <updated>2020-04-19T11:38:18.107Z</updated>
     
     <summary type="html">
     
-      
-      
-        
-        
-          &lt;h1 id=&quot;递增与递减运算符&quot;&gt;&lt;a href=&quot;#递增与递减运算符&quot; class=&quot;headerlink&quot; title=&quot;递增与递减运算符&quot;&gt;&lt;/a&gt;递增与递减运算符&lt;/h1&gt;&lt;h2 id=&quot;前置递增和后置递增小结&quot;&gt;&lt;a href=&quot;#前置递增和后置递增小结&quot;
-        
-      
+      &lt;h1 id=&quot;递增与递减运算符&quot;&gt;&lt;a href=&quot;#递增与递减运算符&quot; class=&quot;headerlink&quot; title=&quot;递增与递减运算符&quot;&gt;&lt;/a&gt;递增与递减运算符&lt;/h1&gt;&lt;h2 id=&quot;前置递增和后置递增小结&quot;&gt;&lt;a href=&quot;#前置递增和后置递增小结&quot; class=&quot;headerlink&quot; title=&quot;前置递增和后置递增小结&quot;&gt;&lt;/a&gt;前置递增和后置递增小结&lt;/h2&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h3 id=&quot;前置：先变量自加1，后表达式返回值；&quot;&gt;&lt;a href=&quot;#前置：先变量自加1，后表达式返回值；&quot; class=&quot;headerlink&quot; title=&quot;前置：先变量自加1，后表达式返回值；&quot;&gt;&lt;/a&gt;前置：先变量自加1，后表达式返回值；&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h3 id=&quot;后置：先表达式原值返回，后变量自加1；&quot;&gt;&lt;a href=&quot;#后置：先表达式原值返回，后变量自加1；&quot; class=&quot;headerlink&quot; title=&quot;后置：先表达式原值返回，后变量自加1；&quot;&gt;&lt;/a&gt;后置：先表达式原值返回，后变量自加1；&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h3 id=&quot;单独使用时，运行结果相同；&quot;&gt;&lt;a href=&quot;#单独使用时，运行结果相同；&quot; class=&quot;headerlink&quot; title=&quot;单独使用时，运行结果相同；&quot;&gt;&lt;/a&gt;单独使用时，运行结果相同；&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h3 id=&quot;与其他代码联用时，执行结果会不同；&quot;&gt;&lt;a href=&quot;#与其他代码联用时，执行结果会不同；&quot; class=&quot;headerlink&quot; title=&quot;与其他代码联用时，执行结果会不同；&quot;&gt;&lt;/a&gt;与其他代码联用时，执行结果会不同；&lt;/h3&gt;&lt;/li&gt;
+&lt;li&gt;&lt;h3 id=&quot;大多使用后置递增-减，且代码独占一行；&quot;&gt;&lt;a href=&quot;#大多使用后置递增-减，且代码独占一行；&quot; class=&quot;headerlink&quot; title=&quot;大多使用后置递增/减，且代码独占一行； &quot;&gt;&lt;/a&gt;大多使用后置递增/减，且代码独占一行；
     
     </summary>
     

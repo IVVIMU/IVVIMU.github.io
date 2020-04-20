@@ -54,14 +54,14 @@
 <li><p>如果第一个表达式的值为真，则返回表达式2</p>
 </li>
 <li><p>如果第一个表达式的值为假，则返回表达式1</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="number">123</span> &amp;&amp; <span class="number">456</span>);               <span class="comment">//456</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">0</span> &amp;&amp; <span class="number">456</span>);                 <span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">0</span> &amp;&amp; <span class="number">1</span> + <span class="number">2</span> &amp;&amp; <span class="number">456</span> * <span class="number">567</span>);  <span class="comment">//0</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="string">''</span> &amp;&amp; <span class="number">1</span> + <span class="number">2</span> &amp;&amp; <span class="number">456</span> * <span class="number">567</span>); <span class="comment">//''</span></span><br><span class="line">  &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
 </li>
 </ul>
 </li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">123</span> &amp;&amp; <span class="number">456</span>);               <span class="comment">//456</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">0</span> &amp;&amp; <span class="number">456</span>);                 <span class="comment">//0</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">0</span> &amp;&amp; <span class="number">1</span> + <span class="number">2</span> &amp;&amp; <span class="number">456</span> * <span class="number">567</span>);  <span class="comment">//0</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">''</span> &amp;&amp; <span class="number">1</span> + <span class="number">2</span> &amp;&amp; <span class="number">456</span> * <span class="number">567</span>); <span class="comment">//''</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
 <ul>
 <li><h4 id="逻辑或"><a href="#逻辑或" class="headerlink" title="逻辑或"></a>逻辑或</h4><ul>
 <li><p>语法：表达式1 || 表达式2</p>
@@ -69,18 +69,18 @@
 <li><p>如果第一个表达式为真，则返回表达式1</p>
 </li>
 <li><p>如果第一个表达式为假，则返回表达式2</p>
-<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">  &lt;script&gt;</span><br><span class="line">      <span class="built_in">console</span>.log(<span class="number">123</span> || <span class="number">456</span>);                <span class="comment">//123</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">123</span> || <span class="number">456</span> || <span class="number">456</span> + <span class="number">123</span>);   <span class="comment">//123</span></span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">0</span> || <span class="number">456</span> ||<span class="number">456</span> + <span class="number">123</span>);      <span class="comment">//456</span></span><br><span class="line">	</span><br><span class="line"><span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line"><span class="built_in">console</span>.log(<span class="number">123</span> || num++);              <span class="comment">//123</span></span><br><span class="line"><span class="built_in">console</span>.log(num);                       <span class="comment">//0</span></span><br><span class="line">  &lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
-
 </li>
 </ul>
 </li>
 </ul>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">123</span> || <span class="number">456</span>);                <span class="comment">//123</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">123</span> || <span class="number">456</span> || <span class="number">456</span> + <span class="number">123</span>);   <span class="comment">//123</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">0</span> || <span class="number">456</span> ||<span class="number">456</span> + <span class="number">123</span>);      <span class="comment">//456</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">123</span> || num++);              <span class="comment">//123</span></span><br><span class="line">	<span class="built_in">console</span>.log(num);                       <span class="comment">//0</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
 <blockquote>
 <p>2020.04.19 创建</p>
 <p>2020.04.20 短路运算（逻辑中断）增补</p>

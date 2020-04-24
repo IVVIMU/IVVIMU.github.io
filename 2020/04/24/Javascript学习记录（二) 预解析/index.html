@@ -9,7 +9,7 @@
     
   <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1" />
   <title>
-    Javascript学习记录（一)  运算符 |  IVVIMU
+    Javascript学习记录（二) 预解析 |  IVVIMU
   </title>
   <meta name="generator" content="hexo-theme-ayer">
   
@@ -42,7 +42,7 @@
   <div id="app">
     <main class="content on">
       <section class="outer">
-  <article id="post-Javascript学习记录（一)  运算符" class="article article-type-post" itemscope
+  <article id="post-Javascript学习记录（二) 预解析" class="article article-type-post" itemscope
   itemprop="blogPost" data-scroll-reveal>
 
   <div class="article-inner">
@@ -50,7 +50,7 @@
     <header class="article-header">
        
 <h1 class="article-title sea-center" style="border-left:0" itemprop="name">
-  Javascript学习记录（一)  运算符
+  Javascript学习记录（二) 预解析
 </h1>
  
 
@@ -59,8 +59,8 @@
 
     
     <div class="article-meta">
-      <a href="/2020/04/19/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-date">
-  <time datetime="2020-04-19T11:10:04.000Z" itemprop="datePublished">2020-04-19</time>
+      <a href="/2020/04/24/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/" class="article-date">
+  <time datetime="2020-04-24T13:45:32.000Z" itemprop="datePublished">2020-04-24</time>
 </a>
       
   <div class="article-category">
@@ -74,7 +74,7 @@
         <span class="post-meta-item-icon">
             <i class="ri-quill-pen-line"></i>
             <span class="post-meta-item-text"> Word count:</span>
-            <span class="post-count">585</span>
+            <span class="post-count">471</span>
         </span>
     </span>
 
@@ -108,91 +108,76 @@
       
 
       
-      <h3 id="递增与递减运算符"><a href="#递增与递减运算符" class="headerlink" title="递增与递减运算符"></a>递增与递减运算符</h3><h5 id="前置递增和后置递增小结"><a href="#前置递增和后置递增小结" class="headerlink" title="前置递增和后置递增小结"></a>前置递增和后置递增小结</h5><ul>
-<li><h6 id="前置：先变量自加1，后表达式返回值；"><a href="#前置：先变量自加1，后表达式返回值；" class="headerlink" title="前置：先变量自加1，后表达式返回值；"></a>前置：先变量自加1，后表达式返回值；</h6></li>
-<li><h6 id="后置：先表达式原值返回，后变量自加1；"><a href="#后置：先表达式原值返回，后变量自加1；" class="headerlink" title="后置：先表达式原值返回，后变量自加1；"></a>后置：先表达式原值返回，后变量自加1；</h6></li>
-</ul>
-<h6 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h6><ul>
-<li><h6 id="单独使用时，运行结果相同；"><a href="#单独使用时，运行结果相同；" class="headerlink" title="单独使用时，运行结果相同；"></a>单独使用时，运行结果相同；</h6></li>
-<li><h6 id="与其他代码联用时，执行结果会不同；"><a href="#与其他代码联用时，执行结果会不同；" class="headerlink" title="与其他代码联用时，执行结果会不同；"></a>与其他代码联用时，执行结果会不同；</h6></li>
-<li><h6 id="大多使用后置递增-减，且代码独占一行；"><a href="#大多使用后置递增-减，且代码独占一行；" class="headerlink" title="大多使用后置递增/减，且代码独占一行；"></a>大多使用后置递增/减，且代码独占一行；</h6></li>
-</ul>
-<h5 id="递增实例"><a href="#递增实例" class="headerlink" title="递增实例"></a>递增实例</h5><figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br><span class="line">15</span><br><span class="line">16</span><br><span class="line">17</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> a = <span class="number">10</span>;</span><br><span class="line">	++a;               <span class="comment">//++a==11   a==11</span></span><br><span class="line">	<span class="keyword">var</span> b = ++a + <span class="number">2</span>;   <span class="comment">//a==12  ++a==12</span></span><br><span class="line">	<span class="built_in">console</span>.log(b);    <span class="comment">//14</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> c = <span class="number">10</span>;</span><br><span class="line">	c++;               <span class="comment">//c++==11  C==11</span></span><br><span class="line">	<span class="keyword">var</span> d = c++ + <span class="number">2</span>;   <span class="comment">//c++==11  c==12</span></span><br><span class="line">	<span class="built_in">console</span>.log(d);    <span class="comment">//13</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> e = <span class="number">10</span>;</span><br><span class="line">	<span class="keyword">var</span> f = e++ + ++e; <span class="comment">//e++==10  e==11 |--| e==12  ++e==12</span></span><br><span class="line">	<span class="built_in">console</span>.log(f);    <span class="comment">//22</span></span><br><span class="line">	</span><br><span class="line">	<span class="comment">//后置自增，先表达式返回原值，后变量再自加1</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-<h5 id="递减同理"><a href="#递减同理" class="headerlink" title="递减同理"></a>递减同理</h5><hr>
-<h4 id="比较运算符"><a href="#比较运算符" class="headerlink" title="比较运算符"></a>比较运算符</h4><table>
-<thead>
-<tr>
-<th>符号</th>
-<th>作用</th>
-<th>用法</th>
-</tr>
-</thead>
-<tbody><tr>
-<td>=</td>
-<td>赋值</td>
-<td>符号右边赋值给符号左边</td>
-</tr>
-<tr>
-<td>==  (!=)</td>
-<td>判断</td>
-<td>判断两边值是否相等（<strong>有隐式转换</strong>）</td>
-</tr>
-<tr>
-<td>===(!==)</td>
-<td>判断</td>
-<td>判断两边的值和数据类型是否<strong>完全相同</strong>(不同类型不比较，切且无结果，同类型才比较)</td>
-</tr>
-</tbody></table>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">18</span> == <span class="string">"18"</span>);   <span class="comment">//true</span></span><br><span class="line">    <span class="built_in">console</span>.log(<span class="number">18</span> === <span class="string">"18"</span>);  <span class="comment">//true</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-<blockquote>
-<p>注意</p>
+      <h1 id="Javascript学习记录（二-预解析"><a href="#Javascript学习记录（二-预解析" class="headerlink" title="Javascript学习记录（二) 预解析"></a>Javascript学习记录（二) 预解析</h1><h5 id="Javascript引擎运行JS代码分为两步：预解析——代码执行"><a href="#Javascript引擎运行JS代码分为两步：预解析——代码执行" class="headerlink" title="Javascript引擎运行JS代码分为两步：预解析——代码执行"></a>Javascript引擎运行JS代码分为两步：预解析——代码执行</h5><ul>
+<li><h5 id="预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面"><a href="#预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面" class="headerlink" title="预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面"></a>预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面</h5><ul>
+<li><h5 id="预解析分为变量预解析（变量提升）和函数预解析（函数提升）"><a href="#预解析分为变量预解析（变量提升）和函数预解析（函数提升）" class="headerlink" title="预解析分为变量预解析（变量提升）和函数预解析（函数提升）"></a>预解析分为变量预解析（<u><strong>变量提升</strong></u>）和函数预解析（<u><strong>函数提升</strong></u>）</h5><blockquote>
+<p> 变量提升就是把所有的变量声明提升到当前作用域最前面，<u>不提升赋值操作</u></p>
+<p> 函数提升就是把所有函数声明提升到当前作用域的最前面，<u>不调用函数</u></p>
 </blockquote>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="built_in">console</span>.log(<span class="literal">NaN</span> != <span class="literal">NaN</span>);   <span class="comment">//true</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-<p><strong>NaN是除数字的任意值，但绝不是确切的某一个值；</strong></p>
-<p><strong>NaN是一个范围,而不能代表一个确定的值。</strong></p>
+</li>
+</ul>
+</li>
+<li><h5 id="代码执行——按照代码书写的顺序从上往下执行"><a href="#代码执行——按照代码书写的顺序从上往下执行" class="headerlink" title="代码执行——按照代码书写的顺序从上往下执行"></a>代码执行——按照代码书写的顺序从上往下执行</h5><h6 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h6></li>
+</ul>
 <hr>
-<h4 id="逻辑运算符"><a href="#逻辑运算符" class="headerlink" title="逻辑运算符"></a>逻辑运算符</h4><h4 id="短路运算（逻辑中断）"><a href="#短路运算（逻辑中断）" class="headerlink" title="短路运算（逻辑中断）"></a>短路运算（逻辑中断）</h4><blockquote>
-<p><strong>短路运算原理</strong>：当有多个表达式（值）时，左边的表达式值可以确定结果时，就不再继续运算右边表达式的值</p>
-</blockquote>
-<ul>
-<li><h6 id="逻辑与"><a href="#逻辑与" class="headerlink" title="逻辑与"></a>逻辑与</h6><ul>
-<li><p>语法：表达式1 &amp;&amp; 表达式2</p>
-</li>
-<li><p>如果第一个表达式的值为真，则返回表达式2</p>
-</li>
-<li><p>如果第一个表达式的值为假，则返回表达式1</p>
-</li>
+<h4 id="实例"><a href="#实例" class="headerlink" title="实例"></a>实例</h4><ul>
+<li><h5 id="作用域实例"><a href="#作用域实例" class="headerlink" title="作用域实例"></a>作用域实例</h5></li>
 </ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">123</span> &amp;&amp; <span class="number">456</span>);               <span class="comment">//456</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">0</span> &amp;&amp; <span class="number">456</span>);                 <span class="comment">//0</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">0</span> &amp;&amp; <span class="number">1</span> + <span class="number">2</span> &amp;&amp; <span class="number">456</span> * <span class="number">567</span>);  <span class="comment">//0</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="string">''</span> &amp;&amp; <span class="number">1</span> + <span class="number">2</span> &amp;&amp; <span class="number">456</span> * <span class="number">567</span>); <span class="comment">//''</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-<ul>
-<li><h6 id="逻辑或"><a href="#逻辑或" class="headerlink" title="逻辑或"></a>逻辑或</h6><ul>
-<li><p>语法：表达式1 || 表达式2</p>
-</li>
-<li><p>如果第一个表达式为真，则返回表达式1</p>
-</li>
-<li><p>如果第一个表达式为假，则返回表达式2</p>
-</li>
-</ul>
-</li>
-</ul>
-<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">123</span> || <span class="number">456</span>);                <span class="comment">//123</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">123</span> || <span class="number">456</span> || <span class="number">456</span> + <span class="number">123</span>);   <span class="comment">//123</span></span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">0</span> || <span class="number">456</span> ||<span class="number">456</span> + <span class="number">123</span>);      <span class="comment">//456</span></span><br><span class="line"></span><br><span class="line">	<span class="keyword">var</span> num = <span class="number">0</span>;</span><br><span class="line">	<span class="built_in">console</span>.log(<span class="number">123</span> || num++);              <span class="comment">//123</span></span><br><span class="line">	<span class="built_in">console</span>.log(num);                       <span class="comment">//0</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
-
-
-
-
-
-
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> num = <span class="number">10</span>;</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(num);</span><br><span class="line">        <span class="keyword">var</span> num = <span class="number">20</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(num);</span><br><span class="line">    &#125;</span><br><span class="line">	fn();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
 
 <blockquote>
-<p>2020.04.19 创建</p>
-<p>2020.04.20 短路运算（逻辑中断）增补</p>
+<p>以上实例相当于执行以下代码</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br></pre></td><td class="code"><pre><span class="line">&lt;scirpt&gt;</span><br><span class="line">    <span class="keyword">var</span> num;</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">fn</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> num;</span><br><span class="line">        <span class="built_in">console</span>.log(num);</span><br><span class="line">        num = <span class="number">20</span></span><br><span class="line">        <span class="built_in">console</span>.log(num);</span><br><span class="line">    &#125;</span><br><span class="line">	num = <span class="number">10</span>;</span><br><span class="line">	fn();</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Console输出：</p>
+<blockquote>
+<p>undenfined</p>
+<p>20</p>
+</blockquote>
+</blockquote>
+<hr>
+<ul>
+<li><h5 id="赋值操作实例"><a href="#赋值操作实例" class="headerlink" title="赋值操作实例"></a>赋值操作实例</h5></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    fun();</span><br><span class="line">	<span class="comment">// 函数表达式</span></span><br><span class="line">	<span class="keyword">var</span> fun = funciton() &#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">22</span>)</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Console报错——Uncaught  TypeError: fun is not a function ….</p>
+<p>以上实例相当于执行以下代码</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="keyword">var</span> fun;                   </span><br><span class="line">	fun();</span><br><span class="line">	fun = <span class="function"><span class="keyword">function</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="built_in">console</span>.log(<span class="number">22</span>);</span><br><span class="line">    &#125;</span><br><span class="line">	<span class="comment">// 函数表达式，调用必须写在函数表达式的下面</span></span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+<ul>
+<li><h5 id="经典实例"><a href="#经典实例" class="headerlink" title="经典实例"></a>经典实例</h5></li>
+</ul>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">	fn();</span><br><span class="line">	<span class="built_in">console</span>.log(c);</span><br><span class="line">	<span class="built_in">console</span>.log(b);</span><br><span class="line">	<span class="built_in">console</span>.log(a);</span><br><span class="line">	</span><br><span class="line">	<span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> a = b = c = <span class="number">9</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">        <span class="built_in">console</span>.log(b);</span><br><span class="line">        <span class="built_in">console</span>.log(c);</span><br><span class="line">    &#125;</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>var a = b = c = 9  相当于</p>
+<blockquote>
+<p>var a = 9;</p>
+<p>b = 9;</p>
+<p>c = 9;</p>
+<p><strong>b 和 c 直接赋值，没有var声明，为全局变量</strong></p>
+</blockquote>
+<p><strong>注意区别集体声明——var a = 9, b = 9, c = 9;</strong></p>
+<p>故上述实例相当于执行以下代码</p>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="gutter"><pre><span class="line">1</span><br><span class="line">2</span><br><span class="line">3</span><br><span class="line">4</span><br><span class="line">5</span><br><span class="line">6</span><br><span class="line">7</span><br><span class="line">8</span><br><span class="line">9</span><br><span class="line">10</span><br><span class="line">11</span><br><span class="line">12</span><br><span class="line">13</span><br><span class="line">14</span><br></pre></td><td class="code"><pre><span class="line">&lt;script&gt;</span><br><span class="line">    <span class="function"><span class="keyword">function</span> <span class="title">f1</span>(<span class="params"></span>) </span>&#123;</span><br><span class="line">        <span class="keyword">var</span> a;</span><br><span class="line">    	a = b = c = <span class="number">9</span>;</span><br><span class="line">        <span class="built_in">console</span>.log(a);</span><br><span class="line">        <span class="built_in">console</span>.log(b);</span><br><span class="line">        <span class="built_in">console</span>.log(c);</span><br><span class="line">    &#125;</span><br><span class="line"></span><br><span class="line">    fn();</span><br><span class="line">	<span class="built_in">console</span>.log(c);</span><br><span class="line">	<span class="built_in">console</span>.log(b);</span><br><span class="line">	<span class="built_in">console</span>.log(a);</span><br><span class="line">&lt;<span class="regexp">/script&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>Console输出</p>
+<blockquote>
+<p>9</p>
+<p>9</p>
+<p>9</p>
+<p>9</p>
+<p>9</p>
+<p>Uncaught ReferenceError: a is not defined</p>
+</blockquote>
 </blockquote>
 
       
@@ -258,7 +243,7 @@
     <a class="modal-close" href="javascript:;"><i class="ri-close-circle-line"></i></a>
     <p>扫一扫，分享到微信</p>
     <div class="wx-qrcode">
-      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ivvimu.github.io/2020/04/19/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/" alt="微信分享二维码">
+      <img src="//api.qrserver.com/v1/create-qr-code/?size=150x150&data=https://ivvimu.github.io/2020/04/24/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/" alt="微信分享二维码">
     </div>
 </div>
 
@@ -276,19 +261,10 @@
   
   <nav class="article-nav">
     
-      <a href="/2020/04/24/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/" class="article-nav-link">
-        <strong class="article-nav-caption">上一篇</strong>
-        <div class="article-nav-title">
-          
-            Javascript学习记录（二) 预解析
-          
-        </div>
-      </a>
     
-    
-      <a href="/2020/04/15/TextArticle/" class="article-nav-link">
+      <a href="/2020/04/19/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/" class="article-nav-link">
         <strong class="article-nav-caption">下一篇</strong>
-        <div class="article-nav-title">TextArticle</div>
+        <div class="article-nav-title">Javascript学习记录（一)  运算符</div>
       </a>
     
   </nav>

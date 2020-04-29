@@ -1,9 +1,12 @@
+.article-header .article-title {
+  font-size: 1em;
+}
 .sidebar {
-  left: -8rem;
+  left: 0rem;
   width: 8rem;
 }
 .sidebar.on {
-  left: 0;
+  left: -8rem;
 }
 .content.on {
   margin-left: 0 !important;

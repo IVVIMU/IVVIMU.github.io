@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ivvimu.github.io/"/>
-  <updated>2020-04-25T07:43:59.408Z</updated>
+  <updated>2020-04-29T12:28:34.914Z</updated>
   <id>https://ivvimu.github.io/</id>
   
   <author>
@@ -21,11 +21,11 @@
     <link href="https://ivvimu.github.io/2020/04/24/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/"/>
     <id>https://ivvimu.github.io/2020/04/24/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/</id>
     <published>2020-04-24T13:45:32.000Z</published>
-    <updated>2020-04-25T07:43:59.408Z</updated>
+    <updated>2020-04-29T12:28:34.914Z</updated>
     
     <summary type="html">
     
-      &lt;h1 id=&quot;Javascript学习记录（二-预解析&quot;&gt;&lt;a href=&quot;#Javascript学习记录（二-预解析&quot; class=&quot;headerlink&quot; title=&quot;Javascript学习记录（二) 预解析&quot;&gt;&lt;/a&gt;Javascript学习记录（二) 预解析&lt;/h1&gt;&lt;h5 id=&quot;Javascript引擎运行JS代码分为两步：预解析——代码执行&quot;&gt;&lt;a href=&quot;#Javascript引擎运行JS代码分为两步：预解析——代码执行&quot; class=&quot;headerlink&quot; title=&quot;Javascript引擎运行JS代码分为两步：预解析——代码执行&quot;&gt;&lt;/a&gt;Javascript引擎运行JS代码分为两步：预解析——代码执行&lt;/h5&gt;&lt;ul&gt;
+      &lt;h5 id=&quot;Javascript引擎运行JS代码分为两步：预解析——代码执行&quot;&gt;&lt;a href=&quot;#Javascript引擎运行JS代码分为两步：预解析——代码执行&quot; class=&quot;headerlink&quot; title=&quot;Javascript引擎运行JS代码分为两步：预解析——代码执行&quot;&gt;&lt;/a&gt;Javascript引擎运行JS代码分为两步：预解析——代码执行&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;&lt;h5 id=&quot;预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面&quot;&gt;&lt;a href=&quot;#预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面&quot; class=&quot;headerlink&quot; title=&quot;预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面&quot;&gt;&lt;/a&gt;预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;&lt;h5 id=&quot;预解析分为变量预解析（变量提升）和函数预解析（函数提升）&quot;&gt;&lt;a href=&quot;#预解析分为变量预解析（变量提升）和函数预解析（函数提升）&quot; class=&quot;headerlink&quot; title=&quot;预解析分为变量预解析（变量提升）和函数预解析（函数提升）&quot;&gt;&lt;/a&gt;预解析分为变量预解析（&lt;u&gt;&lt;strong&gt;变量提升&lt;/strong&gt;&lt;/u&gt;）和函数预解析（&lt;u&gt;&lt;strong&gt;函数提升&lt;/strong&gt;&lt;/u&gt;）&lt;/h5&gt;&lt;blockquote&gt;
 &lt;p&gt; 变量提升就是把所有的变量声明提升到当前作用域最前面，&lt;u&gt;不提升赋值操作&lt;/u&gt;&lt;/p&gt;

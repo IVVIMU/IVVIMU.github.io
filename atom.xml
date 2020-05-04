@@ -6,7 +6,7 @@
   <link href="/atom.xml" rel="self"/>
   
   <link href="https://ivvimu.github.io/"/>
-  <updated>2020-04-29T12:28:34.914Z</updated>
+  <updated>2020-05-04T13:44:28.997Z</updated>
   <id>https://ivvimu.github.io/</id>
   
   <author>
@@ -17,15 +17,42 @@
   <generator uri="https://hexo.io/">Hexo</generator>
   
   <entry>
-    <title>Javascript学习记录（二) 预解析</title>
-    <link href="https://ivvimu.github.io/2020/04/24/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/"/>
-    <id>https://ivvimu.github.io/2020/04/24/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/</id>
-    <published>2020-04-24T13:45:32.000Z</published>
-    <updated>2020-04-29T12:28:34.914Z</updated>
+    <title>JavaScript学习记录（三) 节点</title>
+    <link href="https://ivvimu.github.io/2020/05/04/JavaScript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%89)%20%E8%8A%82%E7%82%B9/"/>
+    <id>https://ivvimu.github.io/2020/05/04/JavaScript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%89)%20%E8%8A%82%E7%82%B9/</id>
+    <published>2020-05-04T13:30:32.000Z</published>
+    <updated>2020-05-04T13:44:28.997Z</updated>
     
     <summary type="html">
     
-      &lt;h5 id=&quot;Javascript引擎运行JS代码分为两步：预解析——代码执行&quot;&gt;&lt;a href=&quot;#Javascript引擎运行JS代码分为两步：预解析——代码执行&quot; class=&quot;headerlink&quot; title=&quot;Javascript引擎运行JS代码分为两步：预解析——代码执行&quot;&gt;&lt;/a&gt;Javascript引擎运行JS代码分为两步：预解析——代码执行&lt;/h5&gt;&lt;ul&gt;
+      &lt;h3 id=&quot;DOM节点&quot;&gt;&lt;a href=&quot;#DOM节点&quot; class=&quot;headerlink&quot; title=&quot;DOM节点&quot;&gt;&lt;/a&gt;DOM节点&lt;/h3&gt;&lt;ul&gt;
+&lt;li&gt;&lt;h4 id=&quot;万物皆节点&quot;&gt;&lt;a href=&quot;#万物皆节点&quot; class=&quot;headerlink&quot; title=&quot;万物皆节点&quot;&gt;&lt;/a&gt;万物皆节点&lt;/h4&gt;&lt;blockquote&gt;
+&lt;p&gt; DOM是由节点组成的。&lt;/p&gt;
+&lt;p&gt; 网页中的所有内容都是节点（标签，属性，文本，注释等），节点用node来表示。&lt;/p&gt;
+&lt;p&gt;节点至少拥有三个基本属性nodeType（节点类型）、nodeName（节点名称）、nodeValue（节点值）&lt;/p&gt;
+&lt;/blockquote&gt;
+&lt;h6 id=&quot;&quot;&gt;&lt;a href=&quot;#&quot; class=&quot;headerlink&quot; title=&quot;&quot;&gt;&lt;/a&gt;
+    
+    </summary>
+    
+    
+      <category term="Records" scheme="https://IVVIMU.github.io/categories/Records/"/>
+    
+    
+      <category term="JavaScript" scheme="https://IVVIMU.github.io/tags/JavaScript/"/>
+    
+  </entry>
+  
+  <entry>
+    <title>JavaScript学习记录（二) 预解析</title>
+    <link href="https://ivvimu.github.io/2020/04/24/JavaScript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/"/>
+    <id>https://ivvimu.github.io/2020/04/24/JavaScript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/</id>
+    <published>2020-04-24T13:45:32.000Z</published>
+    <updated>2020-05-02T12:41:58.853Z</updated>
+    
+    <summary type="html">
+    
+      &lt;h5 id=&quot;JavaScript引擎运行JS代码分为两步：预解析——代码执行&quot;&gt;&lt;a href=&quot;#JavaScript引擎运行JS代码分为两步：预解析——代码执行&quot; class=&quot;headerlink&quot; title=&quot;JavaScript引擎运行JS代码分为两步：预解析——代码执行&quot;&gt;&lt;/a&gt;JavaScript引擎运行JS代码分为两步：预解析——代码执行&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;&lt;h5 id=&quot;预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面&quot;&gt;&lt;a href=&quot;#预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面&quot; class=&quot;headerlink&quot; title=&quot;预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面&quot;&gt;&lt;/a&gt;预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面&lt;/h5&gt;&lt;ul&gt;
 &lt;li&gt;&lt;h5 id=&quot;预解析分为变量预解析（变量提升）和函数预解析（函数提升）&quot;&gt;&lt;a href=&quot;#预解析分为变量预解析（变量提升）和函数预解析（函数提升）&quot; class=&quot;headerlink&quot; title=&quot;预解析分为变量预解析（变量提升）和函数预解析（函数提升）&quot;&gt;&lt;/a&gt;预解析分为变量预解析（&lt;u&gt;&lt;strong&gt;变量提升&lt;/strong&gt;&lt;/u&gt;）和函数预解析（&lt;u&gt;&lt;strong&gt;函数提升&lt;/strong&gt;&lt;/u&gt;）&lt;/h5&gt;&lt;blockquote&gt;
 &lt;p&gt; 变量提升就是把所有的变量声明提升到当前作用域最前面，&lt;u&gt;不提升赋值操作&lt;/u&gt;&lt;/p&gt;
@@ -47,11 +74,11 @@
   </entry>
   
   <entry>
-    <title>Javascript学习记录（一)  运算符</title>
-    <link href="https://ivvimu.github.io/2020/04/19/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
-    <id>https://ivvimu.github.io/2020/04/19/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
+    <title>JavaScript学习记录（一)  运算符</title>
+    <link href="https://ivvimu.github.io/2020/04/19/JavaScript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/"/>
+    <id>https://ivvimu.github.io/2020/04/19/JavaScript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/</id>
     <published>2020-04-19T11:10:04.000Z</published>
-    <updated>2020-04-25T07:43:12.705Z</updated>
+    <updated>2020-05-02T12:42:05.697Z</updated>
     
     <summary type="html">
     

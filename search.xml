@@ -1,9 +1,232 @@
 <?xml version="1.0" encoding="utf-8"?>
 <search>
   <entry>
-    <title>Javascript学习记录（二) 预解析</title>
-    <url>/2020/04/24/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/</url>
-    <content><![CDATA[<h5 id="Javascript引擎运行JS代码分为两步：预解析——代码执行"><a href="#Javascript引擎运行JS代码分为两步：预解析——代码执行" class="headerlink" title="Javascript引擎运行JS代码分为两步：预解析——代码执行"></a>Javascript引擎运行JS代码分为两步：预解析——代码执行</h5><ul>
+    <title>JavaScript学习记录（三) 节点</title>
+    <url>/2020/05/04/JavaScript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%89)%20%E8%8A%82%E7%82%B9/</url>
+    <content><![CDATA[<h3 id="DOM节点"><a href="#DOM节点" class="headerlink" title="DOM节点"></a>DOM节点</h3><ul>
+<li><h4 id="万物皆节点"><a href="#万物皆节点" class="headerlink" title="万物皆节点"></a>万物皆节点</h4><blockquote>
+<p> DOM是由节点组成的。</p>
+<p> 网页中的所有内容都是节点（标签，属性，文本，注释等），节点用node来表示。</p>
+<p>节点至少拥有三个基本属性nodeType（节点类型）、nodeName（节点名称）、nodeValue（节点值）</p>
+</blockquote>
+<h6 id=""><a href="#" class="headerlink" title=""></a><a id="more"></a></h6><ul>
+<li><p>元素节点 nodeType为1</p>
+</li>
+<li><p>属性节点 nodeType为2</p>
+</li>
+<li><p>文本节点 nodeType为3（包括<strong>文字</strong>、<strong>空格</strong>、<strong>换行</strong>等 ）</p>
+</li>
+<li><p>注释节点 nodeType为8</p>
+</li>
+<li><p>文档节点 nodeType为9（整个HTML文档就是一个文档节点，所有节点都是Object.）</p>
+</li>
+</ul>
+</li>
+</ul>
+<ul>
+<li><h4 id="节点的获取"><a href="#节点的获取" class="headerlink" title="节点的获取"></a>节点的获取</h4><figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="comment">//1.通过id获取单个标签</span></span><br><span class="line"><span class="keyword">var</span> ele1 = <span class="built_in">document</span>.getElementById(<span class="string">"IdName"</span>);</span><br><span class="line"><span class="comment">//2.通过标签名获取标签数组(s)</span></span><br><span class="line"><span class="keyword">var</span> ele2 = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"TagName"</span>);</span><br><span class="line"><span class="comment">//3.通过类名获得标签数组(s)</span></span><br><span class="line"><span class="keyword">var</span> ele3 = <span class="built_in">document</span>.getElementsByClassName(<span class="string">"ClassName"</span>)</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>因为通过2,3方式获取的是标签数组,所以习惯遍历数组</p>
+<blockquote>
+<p>即便数组中的值只有一个,也需遵守如下获取方式:</p>
+</blockquote>
+</blockquote>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="built_in">document</span>.getElementsByTagName(<span class="string">"TagName"</span>)[<span class="number">0</span>];     <span class="comment">//取数组中第一个元素</span></span><br><span class="line"><span class="built_in">document</span>.getElementsClassName(<span class="string">"ClassName"</span>)[<span class="number">0</span>];   <span class="comment">//去数组中第一个元素</span></span><br></pre></td></tr></table></figure>
+</li>
+<li><h4 id="节点层级"><a href="#节点层级" class="headerlink" title="节点层级"></a>节点层级</h4><blockquote>
+<p>DOM树把节点划分成不同的层级关系,常见的是<strong>父子兄层级关系</strong></p>
+<blockquote>
+<p>节点的访问关系,是以<strong>属性</strong>的方式存在的</p>
+</blockquote>
+</blockquote>
+<ul>
+<li><h5 id="父节点"><a href="#父节点" class="headerlink" title="父节点"></a>父节点</h5><blockquote>
+<p> <strong>node.parentNode</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="comment">&lt;!--实例模板，在子节点代码实例中省略--&gt;</span></span><br><span class="line">   <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>我是span<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是li<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ol</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是li1<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是li2<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">      <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是li3<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;<span class="name">li</span>&gt;</span>我是li4<span class="tag">&lt;/<span class="name">li</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">ol</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"demo"</span>&gt;</span></span><br><span class="line">    	<span class="tag">&lt;<span class="name">div</span> <span class="attr">class</span>=<span class="string">"box"</span>&gt;</span></span><br><span class="line">            <span class="tag">&lt;<span class="name">span</span> <span class="attr">class</span>=<span class="string">"SpanName"</span>&gt;</span><span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">        <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line"></span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> SpanName = <span class="built_in">document</span>.querySelector(<span class="string">'.SpanName'</span>);</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(SpanName.parentNode);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+</li>
+</ul>
+</li>
+</ul>
+<pre><code>&gt; 输出所选元素最近的父级节点
+&gt;
+&gt; &gt; *&lt;div class=&quot;box&quot;&gt;...&lt;/div&gt;*</code></pre><ul>
+<li><h5 id="子节点"><a href="#子节点" class="headerlink" title="子节点"></a>子节点</h5><blockquote>
+<p><strong>1、parentNode.childNodes(标准)</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">"ul"</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//DOM提供的方法（API）获取</span></span></span><br><span class="line"><span class="actionscript">    <span class="keyword">var</span> lis = ul.querySelectorAll(<span class="string">"li"</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//parentNode.childNodes方法获取</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(ul.childNodes);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>输出所有的子节点，包含<strong>元素节点，文本节点(文字，空格，换行)</strong>等</p>
+<blockquote>
+<p><em>NodeList(9)</em>——里面包含5个文本节点（<strong>换行</strong>）与5个元素节点</p>
+</blockquote>
+</blockquote>
+<hr>
+<blockquote>
+<p><strong>2、parentNode.children(非标准)</strong></p>
+<blockquote>
+<p>parentNode.children是一个只读属性，返回所有的子元素节点，不返回其余节点</p>
+</blockquote>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">"ul"</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//parentNode.children方法获取</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(ul.children);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>输出所选元素节点</p>
+<blockquote>
+<p>HTMLCollection(4)</p>
+</blockquote>
+</blockquote>
+<p>　<strong>如何获取特定元素？</strong></p>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="keyword">var</span> ol = <span class="built_in">document</span>.querySelector(<span class="string">"ol"</span>);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//firstChild获取第一个子节点，包括文本节点,找不到则返回null</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(ol.firstChild);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//lastChild获取最后一个子节点，包括文本节点,找不到则返回null</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(ol.lastChild);</span></span><br><span class="line">    </span><br><span class="line"><span class="actionscript">    <span class="comment">//以下两个方法有兼容性问题，IE9以上才支持</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//firstElementChild返回第一个子元素节点</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(ol.firstElementChild);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//lastElementChild返回最后一个子元素节点</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(ol.lastElementChild);</span></span><br><span class="line">    </span><br><span class="line"><span class="actionscript">    <span class="comment">//实际开发写法</span></span></span><br><span class="line"><span class="actionscript">    <span class="comment">//返回第一个子元素节点</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(ol.children[<span class="number">0</span>]);</span></span><br><span class="line"><span class="actionscript">    <span class="comment">//返回最后一个子元素节点</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(ol.children[ol.children.length - <span class="number">1</span>]);   </span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p>输出</p>
+<blockquote>
+<p><em>#text</em></p>
+<p><em>#text</em></p>
+<p>*<li>我是li1</li>*</p>
+<p>*<li>我是li4</li>*</p>
+<p>*<li>我是li1</li>*</p>
+<p>*<li>我是li4</li>*</p>
+</blockquote>
+</blockquote>
+</li>
+<li><h5 id="兄节点"><a href="#兄节点" class="headerlink" title="兄节点"></a>兄节点</h5><blockquote>
+<p><strong>node.nextSibling</strong></p>
+<p><strong>node.previousSibling</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>我是span<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    	<span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">"div"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> span = <span class="built_in">document</span>.querySelector(<span class="string">"span"</span>)</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//返回下一个兄弟节点，包括文本节点（换行），找不到则返回null</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(div.nextSibling);</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//返回上一个兄弟节点，包括文本节点（换行），找不到则返回null</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(span.previousSibling);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>node.nextElementSibling</strong></p>
+<p><strong>node.previousElementSibling</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">div</span>&gt;</span>我是div<span class="tag">&lt;/<span class="name">div</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">span</span>&gt;</span>我是span<span class="tag">&lt;/<span class="name">span</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    	<span class="keyword">var</span> div = <span class="built_in">document</span>.querySelector(<span class="string">"div"</span>);</span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> span = <span class="built_in">document</span>.querySelector(<span class="string">"span"</span>)</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//返回下一个兄弟元素节点，找不到则返回null</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(div.nextElementSibling);</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//返回上一个兄弟元素节点，找不到则返回null</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(span.previousElementSibling);</span></span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span></span></span><br></pre></td></tr></table></figure>
+
+<p><strong>注意</strong>：有兼容性问题，IE9以上才支持</p>
+<p><strong>如何解决兼容性问题？</strong>——<strong>封装一个兼容性函数</strong></p>
+<figure class="highlight javascript"><table><tr><td class="code"><pre><span class="line"><span class="function"><span class="keyword">function</span> <span class="title">getNextElementSibling</span>(<span class="params">element</span>) </span>&#123;</span><br><span class="line">    <span class="keyword">var</span> el = element;</span><br><span class="line">    <span class="keyword">while</span> (el = el.nextSibling) &#123;</span><br><span class="line">        <span class="keyword">if</span> (el.nodeType ===<span class="number">1</span>) &#123;</span><br><span class="line">            <span class="comment">//返回元素节点</span></span><br><span class="line">            <span class="keyword">return</span> el;</span><br><span class="line">        &#125;</span><br><span class="line">    &#125;</span><br><span class="line">    <span class="keyword">return</span> <span class="literal">null</span>;</span><br><span class="line">&#125;</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<ul>
+<li><h4 id="创建节点"><a href="#创建节点" class="headerlink" title="创建节点"></a>创建节点</h4><blockquote>
+<p><strong>1、创建节点</strong></p>
+<blockquote>
+<p><strong>document.createElement(“TagName”)</strong></p>
+</blockquote>
+<p><strong>根据需求动态生成，称为<u>动态创建元素节点</u></strong></p>
+</blockquote>
+<hr>
+<blockquote>
+<p>2、<strong>添加节点</strong></p>
+<blockquote>
+<p><strong>node.appendChild(child)</strong></p>
+</blockquote>
+<p><strong>将一个节点添加到指定父节点的子节点列表<u>末尾</u></strong></p>
+<blockquote>
+<p><strong>node.insertBefore(child,指定元素位置)</strong></p>
+</blockquote>
+<p><strong>将一个节点添加到父节点的<u>指定子节点前面</u></strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    <span class="tag">&lt;<span class="name">ul</span>&gt;</span><span class="tag">&lt;/<span class="name">ul</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">    	<span class="keyword">var</span> ul = <span class="built_in">document</span>.querySelector(<span class="string">"ul"</span>);</span></span><br><span class="line">        </span><br><span class="line"><span class="actionscript">        <span class="comment">//创建元素节点</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> li = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span></span><br><span class="line"><span class="actionscript">        <span class="comment">//添加节点</span></span></span><br><span class="line">        ul.appendChild(li);</span><br><span class="line">        </span><br><span class="line"><span class="actionscript">        <span class="comment">//指定位置添加节点</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> lis = <span class="built_in">document</span>.createElement(<span class="string">"li"</span>);</span></span><br><span class="line">        ul.insertBefore(lis,ul.children[0]);</span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+
+
+</li>
+</ul>
+<ul>
+<li><h4 id="删除节点"><a href="#删除节点" class="headerlink" title="删除节点"></a>删除节点</h4><blockquote>
+<p><strong>node.removeChild(child)</strong></p>
+<blockquote>
+<p><strong>node.removeChild()</strong>方法从DOM中删除一个子节点，返回删除的节点</p>
+</blockquote>
+</blockquote>
+</li>
+<li><h4 id="克隆节点"><a href="#克隆节点" class="headerlink" title="克隆节点"></a>克隆节点</h4><blockquote>
+<p><strong>node.cloneNode()</strong></p>
+<blockquote>
+<p><strong>返回调用该方法的节点的一个副本</strong></p>
+</blockquote>
+<p>node.cloneNode();          括号里为空或者为false——浅拷贝，只复制标签，不复制内容</p>
+<p>node.cloneNode(<strong>true</strong>);  括号里为true——深拷贝，既复制标签也复制内容</p>
+</blockquote>
+</li>
+<li><h4 id="节点属性"><a href="#节点属性" class="headerlink" title="节点属性"></a>节点属性</h4><ul>
+<li><h5 id="获取节点的属性"><a href="#获取节点的属性" class="headerlink" title="获取节点的属性"></a>获取节点的属性</h5><ul>
+<li><h6 id="方法1"><a href="#方法1" class="headerlink" title="方法1"></a>方法1</h6><blockquote>
+<p><strong>元素节点.属性</strong></p>
+<p><strong>元素节点[属性]</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line"><span class="tag">&lt;<span class="name">body</span>&gt;</span></span><br><span class="line">    //实例模板，下同</span><br><span class="line">    <span class="tag">&lt;<span class="name">img</span> <span class="attr">src</span>=<span class="string">"#1"</span> <span class="attr">class</span>=<span class="string">"image1-box"</span> <span class="attr">title</span>=<span class="string">"cover1"</span> <span class="attr">alt</span>=<span class="string">"封面"</span>&gt;</span></span><br><span class="line">    </span><br><span class="line">    <span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">    	<span class="comment">//获取节点</span></span></span><br><span class="line"><span class="javascript">        <span class="keyword">var</span> imgNode = <span class="built_in">document</span>.getElementsByTagName(<span class="string">"img"</span>)[<span class="number">0</span>];</span></span><br><span class="line">        </span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(imgNode.src);</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(imgNode.className);   <span class="comment">//注意：className</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(imgNode.title);</span></span><br><span class="line">        </span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(<span class="string">"--------------------"</span>);</span></span><br><span class="line">        </span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(imgNode[<span class="string">"src"</span>]);</span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(imgNode[<span class="string">"className"</span>]);<span class="comment">//注意：className</span></span></span><br><span class="line"><span class="javascript">        <span class="built_in">console</span>.log(imgNode[<span class="string">"title"</span>]);</span></span><br><span class="line">        </span><br><span class="line">    <span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">body</span>&gt;</span></span><br></pre></td></tr></table></figure>
+
+<hr>
+</li>
+<li><h6 id="方法2"><a href="#方法2" class="headerlink" title="方法2"></a>方法2</h6><blockquote>
+<p><strong>node.getAttribute(AttributeName)</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="javascript">	<span class="built_in">console</span>.log(imgNode.getAttribute(<span class="string">"src"</span>));</span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(imgNode.getAttribute(<span class="string">"class"</span>));<span class="comment">//注意是class</span></span></span><br><span class="line"><span class="javascript">    <span class="built_in">console</span>.log(imgNode.getAttribute(<span class="string">"title"</span>));</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+<blockquote>
+<p><strong>与方法一的区别在于：方法1是直接操作标签，而方法2是把标签作为DOM节点</strong></p>
+</blockquote>
+</li>
+</ul>
+</li>
+<li><h5 id="设置节点的属性"><a href="#设置节点的属性" class="headerlink" title="设置节点的属性"></a>设置节点的属性</h5><ul>
+<li><h6 id="方法1-1"><a href="#方法1-1" class="headerlink" title="方法1"></a>方法1</h6><blockquote>
+<p><strong>node.AttributeName = “AttributeValue”</strong></p>
+</blockquote>
+</li>
+<li><h6 id="方法2-1"><a href="#方法2-1" class="headerlink" title="方法2"></a>方法2</h6><blockquote>
+<p><strong>node.setAttribute(AttributeName,AttributeValue)</strong></p>
+</blockquote>
+</li>
+</ul>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">	<span class="comment">//方法1</span></span></span><br><span class="line"><span class="actionscript">    imgNode.src = <span class="string">"#2"</span>;</span></span><br><span class="line"><span class="actionscript">    imgNode.className = <span class="string">"image2-box"</span>;          <span class="comment">//注意，className</span></span></span><br><span class="line"><span class="actionscript">    imgNode.title = <span class="string">"cover2"</span></span></span><br><span class="line">    </span><br><span class="line"><span class="actionscript">    <span class="comment">//方法2</span></span></span><br><span class="line"><span class="actionscript">    imgNode.setAttribute(<span class="string">"src"</span>,<span class="string">"#2"</span>);</span></span><br><span class="line"><span class="actionscript">    imgNode.setAttribute(<span class="string">"class"</span>,<span class="string">"image2-box"</span>);<span class="comment">//注意，class</span></span></span><br><span class="line"><span class="actionscript">    imgNode.setAttribute(<span class="string">"title"</span>,<span class="string">"cover2"</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+</li>
+</ul>
+<hr>
+<ul>
+<li><h5 id="删除节点的属性"><a href="#删除节点的属性" class="headerlink" title="删除节点的属性"></a>删除节点的属性</h5><blockquote>
+<p><strong>node.removeAttribute(AttributeName)</strong></p>
+</blockquote>
+<figure class="highlight html"><table><tr><td class="code"><pre><span class="line">......</span><br><span class="line"></span><br><span class="line"><span class="tag">&lt;<span class="name">script</span>&gt;</span></span><br><span class="line"><span class="actionscript">	imgNode.removeAttribute(<span class="string">"class"</span>);</span></span><br><span class="line"><span class="actionscript">    imgNode.removeAttribute(<span class="string">"id"</span>);</span></span><br><span class="line"><span class="tag">&lt;/<span class="name">script</span>&gt;</span></span><br><span class="line"></span><br><span class="line">......</span><br></pre></td></tr></table></figure>
+
+
+
+
+
+
+
+
+
+
+
+
+
+</li>
+</ul>
+</li>
+</ul>
+]]></content>
+      <categories>
+        <category>Records</category>
+      </categories>
+      <tags>
+        <tag>JavaScript</tag>
+      </tags>
+  </entry>
+  <entry>
+    <title>JavaScript学习记录（二) 预解析</title>
+    <url>/2020/04/24/JavaScript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%BA%8C)%20%E9%A2%84%E8%A7%A3%E6%9E%90/</url>
+    <content><![CDATA[<h5 id="JavaScript引擎运行JS代码分为两步：预解析——代码执行"><a href="#JavaScript引擎运行JS代码分为两步：预解析——代码执行" class="headerlink" title="JavaScript引擎运行JS代码分为两步：预解析——代码执行"></a>JavaScript引擎运行JS代码分为两步：预解析——代码执行</h5><ul>
 <li><h5 id="预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面"><a href="#预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面" class="headerlink" title="预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面"></a>预解析——把JS代码里所有的变量和函数提升到当前作用域的最前面</h5><ul>
 <li><h5 id="预解析分为变量预解析（变量提升）和函数预解析（函数提升）"><a href="#预解析分为变量预解析（变量提升）和函数预解析（函数提升）" class="headerlink" title="预解析分为变量预解析（变量提升）和函数预解析（函数提升）"></a>预解析分为变量预解析（<u><strong>变量提升</strong></u>）和函数预解析（<u><strong>函数提升</strong></u>）</h5><blockquote>
 <p> 变量提升就是把所有的变量声明提升到当前作用域最前面，<u>不提升赋值操作</u></p>
@@ -87,8 +310,8 @@
       </tags>
   </entry>
   <entry>
-    <title>Javascript学习记录（一)  运算符</title>
-    <url>/2020/04/19/Javascript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
+    <title>JavaScript学习记录（一)  运算符</title>
+    <url>/2020/04/19/JavaScript%E5%AD%A6%E4%B9%A0%E8%AE%B0%E5%BD%95%EF%BC%88%E4%B8%80)%20%20%E8%BF%90%E7%AE%97%E7%AC%A6/</url>
     <content><![CDATA[<h3 id="递增与递减运算符"><a href="#递增与递减运算符" class="headerlink" title="递增与递减运算符"></a>递增与递减运算符</h3><h5 id="前置递增和后置递增小结"><a href="#前置递增和后置递增小结" class="headerlink" title="前置递增和后置递增小结"></a>前置递增和后置递增小结</h5><ul>
 <li><h6 id="前置：先变量自加1，后表达式返回值；"><a href="#前置：先变量自加1，后表达式返回值；" class="headerlink" title="前置：先变量自加1，后表达式返回值；"></a>前置：先变量自加1，后表达式返回值；</h6></li>
 <li><h6 id="后置：先表达式原值返回，后变量自加1；"><a href="#后置：先表达式原值返回，后变量自加1；" class="headerlink" title="后置：先表达式原值返回，后变量自加1；"></a>后置：先表达式原值返回，后变量自加1；</h6></li>
